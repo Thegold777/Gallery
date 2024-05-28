@@ -14,21 +14,29 @@ function handleClick() {
                 postsContainer.appendChild(postElement);
             });
         });
-
 }
 
-function loadData() {
-    return new Promise((resolve, reject) => {
-        // setTimeout не является частью решения
-        // Код ниже должен быть заменен на логику подходящую для решения вашей задачи
-        setTimeout(resolve, 2000);
-    })
-}
+//function loadData() {
+//   return new Promise((resolve, reject) => {
+// setTimeout не является частью решения
+// Код ниже должен быть заменен на логику подходящую для решения вашей задачи
+//       setTimeout(resolve, 2000);
+//    })
+//}
 
-loadData()
-    .then(() => {
-        let preloaderEl = document.getElementById('preloader');
-        preloaderEl.classList.add('hidden');
-        preloaderEl.classList.remove('visible');
-    });
-    
+//loadData()
+//    .then(() => {
+//       let preloaderEl = document.getElementById('preloader');
+//       preloaderEl.classList.add('hidden');
+//       preloaderEl.classList.remove('visible');
+//   });
+
+let mask = document.querySelector('.mask');
+window.addEventListener('load', () => {
+    mask.classList.add('hide');
+    setTimeout(() => {
+        mask.remove();
+    }, 600);
+
+});
+
